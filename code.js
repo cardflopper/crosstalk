@@ -10,7 +10,7 @@ function pickRandomCard() {
 
 function getCardContents(cardNum){
 	let items = 6;
-	let list = document.createElement("ul");
+	let list = document.createElement("ol");
 	cardStyle = cardNum%2==0?"odd":"even";
 	list.classList.add(cardStyle);
 	for(let i=0;i<items;i++){
