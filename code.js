@@ -25,9 +25,26 @@ function nextCard() {
     let card_i = pickRandomCard();
     cardContents = getCardContents(card_i);
 
+	let number = document.getElementById("number");
+	let n = document.createTextNode("("+card_i+")");
+	if(number.childNodes.length == 0)
+		number.append(n);
+	else{
+		let old_n = number.firstChild;
+		number.replaceChild(n,old_n);
+	}
+	number.append(n);
+	
     let card = document.getElementById("card");
-	card.innerHTML="";
-	card.append(cardContents);
+	
+	if(card.childNodes.length == 0)
+		card.append(cardContents);
+	else{
+		let old_card = card.firstChild;
+		card.replaceChild(cardContents,old_card);
+	}
+	
+
 }
 
 nextCard();
