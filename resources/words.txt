@@ -1,4 +1,4 @@
-Scotchtape
+﻿Scotchtape
 Stockbroker
 Return on Investment (ROI)
 Two peas In a pod
@@ -740,7 +740,7 @@ Carjacking
 Secret admirer
 Daydream
 Cinderella
-Flashligh
+Flashlight
 Zipper
 Slingshot
 John Stewart
