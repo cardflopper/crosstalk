@@ -1941,4 +1941,4 @@ Wishbone
 On the fence
 Tarzan
 Babysitter
-Ronald Reagan];
+Ronald Reagan
