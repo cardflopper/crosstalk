@@ -1,9 +1,5 @@
-function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-//162 cards, 2 sides each = 324 faces.
-//We want to select a single side: range is 0 to 323
+//162 cards, 2 sides each = 324 card faces.
+//We want to select a single face: index is 0 to 323
 function pickRandomCard() {
   return Math.floor(Math.random() * 162 * 2);
 }
@@ -12,37 +8,38 @@ function pickRandomCard() {
 //every 12 words is one card (front and back)
 //first 6 from the brown side of the card, the next 6 from the green side
 function getCardContents(cardNum) {
-  let items = 6;
-  let list = document.createElement("ol");
+  let n = 6;
+  let ol = document.createElement("ol");
   cardStyle = cardNum % 2 == 0 ? "odd" : "even";
-  list.classList.add(cardStyle);
+  ol.classList.add(cardStyle);
   for (let i = 0; i < items; i++) {
-    let item = document.createElement("li");
-    item.innerHTML = words[cardNum * items + i];
-    list.append(item);
+    let li = document.createElement("li");
+    let text = document.createTextNode(words[cardNum * n + i]);
+    li.append(text);
+    ol.append(li);
   }
-  return list;
+  return ol;
 }
 
 function nextCard() {
-  let card_i = pickRandomCard();
-  cardContents = getCardContents(card_i);
+  let rnd = pickRandomCard();
+  
 
   let number = document.getElementById("number");
-  let n = document.createTextNode("(" + card_i + ")");
+  let n = document.createTextNode("(" + rnd + ")");
+  
   if (number.childNodes.length == 0) number.append(n);
   else {
     let old_n = number.firstChild;
-    number.replaceChild(n, old_n);
+    old_n.replaceWith(n);
   }
-  number.append(n);
 
   let card = document.getElementById("card");
-
+  cardContents = getCardContents(rnd);
   if (card.childNodes.length == 0) card.append(cardContents);
   else {
     let old_card = card.firstChild;
-    card.replaceChild(cardContents, old_card);
+    old_card.replaceWith(cardContents);
   }
 }
 
