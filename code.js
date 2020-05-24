@@ -12,7 +12,7 @@ function getCardContents(cardNum) {
   let ol = document.createElement("ol");
   cardStyle = cardNum % 2 == 0 ? "odd" : "even";
   ol.classList.add(cardStyle);
-  for (let i = 0; i < items; i++) {
+  for (let i = 0; i < n; i++) {
     let li = document.createElement("li");
     let text = document.createTextNode(words[cardNum * n + i]);
     li.append(text);
