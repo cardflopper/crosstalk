@@ -26,7 +26,7 @@ function nextCard() {
   
 
   let number = document.getElementById("number");
-  let n = document.createTextNode("(" + rnd + ")+");
+  let n = document.createTextNode("(" + rnd + ")");
   
   if (number.childNodes.length == 0) number.append(n);
   else {
