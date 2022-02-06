@@ -560,7 +560,7 @@ let words = [
   "Chuck E. Cheese",
   "Wrecking ball",
   "Ice age",
-  "El Niño",
+  "El Nino",
   "Pedestrian",
   "Verdict",
   "Monopoly",
