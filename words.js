@@ -9,7 +9,7 @@ let words = [
   "The ends justify the means",
   "Mr. Potato Head",
   "Fifty Shades of Grey",
-  "Onion rings"
+  "Onion rings",
   "Snoopy",
   "Formula",
   "Starry Night",
