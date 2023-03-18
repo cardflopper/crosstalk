@@ -10,7 +10,7 @@ function pickRandomCard() {
 function getCardContents(cardNum) {
   let n = 6;
   let ol = document.createElement("ol");
-  cardStyle = cardNum % 2 == 0 ? "odd" : "even";
+  cardStyle = cardNum % 2 == 0 ? "odd" : "even"; //2023-03-17 not an error, cards are zero indexed: so card[0]=#1, card[1]=#2, card[2]=#3
   ol.classList.add(cardStyle);
   for (let i = 0; i < n; i++) {
     let li = document.createElement("li");

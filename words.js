@@ -161,7 +161,7 @@ let words = [
   "Sherlock Holmes",
   "Helen Keller",
   "Schinder's List",
-  "Rober Deniro",
+  "Robert Deniro",
   "Queen Latifah",
   "Canvas",
   "By the skin of my teeth",
