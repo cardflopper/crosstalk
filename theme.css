@@ -99,20 +99,12 @@ button.next-btn {
   font-size: 1.2rem;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+
   user-select: none;
   box-shadow: 0 3px 6px rgba(0,0,0,0.3);
   width: 80%;
   max-width: 320px;
   text-align: center;
-}
-
-button.next-btn:hover
-{
-  background-color: #805522;
-  color: #fff;
-  outline: none;
-  box-shadow: 0 0 8px #fff6cc;
 }
 
 a.official-link {
@@ -129,12 +121,6 @@ a.official-link {
   cursor: pointer;
 }
 
-a.official-link:hover,
-a.official-link:focus {
-  text-decoration: underline;
-  outline: none;
-}
-
 @media (max-width: 360px) {
   button.next-btn {
     font-size: 1rem;
@@ -147,4 +133,14 @@ a.official-link:focus {
   a.official-link {
     width: 90%;
   }
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
