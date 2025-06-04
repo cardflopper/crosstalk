@@ -107,8 +107,8 @@ button.next-btn {
   text-align: center;
 }
 
-button.next-btn:hover,
-button.next-btn:focus {
+button.next-btn:hover
+{
   background-color: #805522;
   color: #fff;
   outline: none;

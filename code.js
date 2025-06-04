@@ -18,8 +18,9 @@ function nextCard() {
   list.innerHTML = '';
   
   //2023-03-17 not an error, cards are zero indexed: so card[0]=#1, card[1]=#2, card[2]=#3
+  
   var cardStyle = rnd % 2 == 0 ? "odd" : "even";
-  list.classList.add(cardStyle);
+  list.className = "word-list " + cardStyle;
   cardWords.forEach(word => {
     const li = document.createElement("li");
     const span = document.createElement("span");
