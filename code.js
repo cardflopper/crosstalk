@@ -7,40 +7,27 @@ function pickRandomCard() {
 //words are in words.js file as "words" array
 //every 12 words is one card (front and back)
 //first 6 from the brown side of the card, the next 6 from the green side
-function getCardContents(cardNum) {
-  let n = 6;
-  let ol = document.createElement("ol");
-  cardStyle = cardNum % 2 == 0 ? "odd" : "even"; //2023-03-17 not an error, cards are zero indexed: so card[0]=#1, card[1]=#2, card[2]=#3
-  ol.classList.add(cardStyle);
-  for (let i = 0; i < n; i++) {
-    let li = document.createElement("li");
-    let text = document.createTextNode(words[cardNum * n + i]);
-    li.append(text);
-    ol.append(li);
-  }
-  return ol;
-}
+
 
 function nextCard() {
   let rnd = pickRandomCard();
   
+  var cardWords = words.slice(rnd*6,rnd*6 + 6);
 
-  let number = document.getElementById("number");
-  let n = document.createTextNode("(" + rnd + ")");
+  const list = document.getElementById("wordCard");
+  list.innerHTML = '';
   
-  if (number.childNodes.length == 0) number.append(n);
-  else {
-    let old_n = number.firstChild;
-    old_n.replaceWith(n);
-  }
-
-  let card = document.getElementById("card");
-  cardContents = getCardContents(rnd);
-  if (card.childNodes.length == 0) card.append(cardContents);
-  else {
-    let old_card = card.firstChild;
-    old_card.replaceWith(cardContents);
-  }
+  //2023-03-17 not an error, cards are zero indexed: so card[0]=#1, card[1]=#2, card[2]=#3
+  var cardStyle = rnd % 2 == 0 ? "odd" : "even";
+  list.classList.add(cardStyle);
+  cardWords.forEach(word => {
+    const li = document.createElement("li");
+    const span = document.createElement("span");
+    span.className = "word-text";
+    span.textContent = word;
+    li.appendChild(span);
+    list.appendChild(li);
+  });
 }
-
+  
 nextCard();
